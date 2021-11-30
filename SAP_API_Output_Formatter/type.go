@@ -67,7 +67,7 @@ type PurchaseOrderReference struct {
 	PurchasingDocumentItemCategory string `json:"PurchasingDocumentItemCategory"`
 }
 
-type AccountAssignment struct {
+type Account struct {
 	SupplierInvoice               string `json:"SupplierInvoice"`
 	FiscalYear                    string `json:"FiscalYear"`
 	SupplierInvoiceItem           string `json:"SupplierInvoiceItem"`
