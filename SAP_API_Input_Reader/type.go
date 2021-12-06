@@ -131,7 +131,7 @@ type SDC struct {
 			ProfitabilitySegment          string      `json:"ProfitabilitySegment"`
 		} `json:"AccountAssignment"`
 	} `json:"SupplierInvoice"`
-	APISchema       string `json:"api_schema"`
-	SupplierInvoice string `json:"supplier_invoice"`
-	Deleted         bool   `json:"deleted"`
+	APISchema          string `json:"api_schema"`
+	SupplierInvoiceNo  string `json:"supplier_invoice"`
+	Deleted            bool   `json:"deleted"`
 }
