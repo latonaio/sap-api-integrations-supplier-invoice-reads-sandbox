@@ -46,7 +46,7 @@ type EC_MC struct {
 	InvoicingParty          string      `json:"plant/supplier"`
 	Stock                   string      `json:"stock"`
 	AccountingDocumentType  string      `json:"document_type"`
-	SupplierInvoice         string      `json:"document_no"`
+	SupplierInvoiceNo       string      `json:"document_no"`
 	PlannedDate             string      `json:"planned_date"`
 	PostingDate             string      `json:"validated_date"`
 	Deleted                 bool        `json:"deleted"`
@@ -82,7 +82,7 @@ type SDC struct {
 		SupplierPostingLineItemText   string      `json:"SupplierPostingLineItemText"`
 		TaxIsCalculatedAutomatically  bool        `json:"TaxIsCalculatedAutomatically"`
 		BusinessArea                  string      `json:"BusinessArea"`
-		SupplierInvoiceIsCreditMemo   bool        `json:"SupplierInvoiceIsCreditMemo"`
+		SupplierInvoiceIsCreditMemo   string      `json:"SupplierInvoiceIsCreditMemo"`
 		ReverseDocument               string      `json:"ReverseDocument"`
 		ReverseDocumentFiscalYear     string      `json:"ReverseDocumentFiscalYear"`
 		Tax                           struct {
@@ -91,7 +91,7 @@ type SDC struct {
 			TaxAmount                string `json:"TaxAmount"`
 			TaxBaseAmountInTransCrcy string `json:"TaxBaseAmountInTransCrcy"`
 		} `json:"Tax"`
-		PurchaseOrderReference struct {
+		PurchaseOrder          struct {
 			SupplierInvoiceItem            string `json:"SupplierInvoiceItem"`
 			PurchaseOrder                  string `json:"PurchaseOrder"`
 			PurchaseOrderItem              string `json:"PurchaseOrderItem"`
@@ -105,7 +105,7 @@ type SDC struct {
 			QtyInPurchaseOrderPriceUnit    string `json:"QtyInPurchaseOrderPriceUnit"`
 			SupplierInvoiceItemText        string `json:"SupplierInvoiceItemText"`
 			PurchasingDocumentItemCategory string `json:"PurchasingDocumentItemCategory"`
-		} `json:"PurchaseOrderReference"`
+		} `json:"PurchaseOrder"`
 		AccountAssignment struct {
 			SupplierInvoiceItem           string      `json:"SupplierInvoiceItem"`
 			CompanyCode                   string      `json:"CompanyCode"`

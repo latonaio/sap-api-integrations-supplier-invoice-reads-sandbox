@@ -4,7 +4,7 @@
 	"redis_key": "abcdefg",
 	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
 	"SupplierInvoice": {
-		"SupplierInvoice": "5100000001",
+		"SupplierInvoice": "5100000031",
 		"FiscalYear": "2016",
 		"CompanyCode": "1000",
 		"DocumentDate": "20211130",
@@ -78,6 +78,6 @@
 		}
 	},
 	"api_schema": "sap.s4.beh.supplierinvoice.v1.SupplierInvoice.Created.v1",
-	"supplier_invoice": "5100000001",
+	"supplier_invoice": "5100000031",
 	"deleted": false
 }

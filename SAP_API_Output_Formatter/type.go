@@ -35,7 +35,7 @@ type Header struct {
 	SupplierPostingLineItemText   string `json:"SupplierPostingLineItemText"`
 	TaxIsCalculatedAutomatically  bool   `json:"TaxIsCalculatedAutomatically"`
 	BusinessArea                  string `json:"BusinessArea"`
-	SupplierInvoiceIsCreditMemo   bool   `json:"SupplierInvoiceIsCreditMemo"`
+	SupplierInvoiceIsCreditMemo   string `json:"SupplierInvoiceIsCreditMemo"`
 	ReverseDocument               string `json:"ReverseDocument"`
 	ReverseDocumentFiscalYear     string `json:"ReverseDocumentFiscalYear"`
 }
@@ -47,24 +47,6 @@ type Tax struct {
 	DocumentCurrency         string `json:"DocumentCurrency"`
 	TaxAmount                string `json:"TaxAmount"`
 	TaxBaseAmountInTransCrcy string `json:"TaxBaseAmountInTransCrcy"`
-}
-
-type PurchaseOrderReference struct {
-	SupplierInvoice                string `json:"SupplierInvoice"`
-	FiscalYear                     string `json:"FiscalYear"`
-	SupplierInvoiceItem            string `json:"SupplierInvoiceItem"`
-	PurchaseOrder                  string `json:"PurchaseOrder"`
-	PurchaseOrderItem              string `json:"PurchaseOrderItem"`
-	Plant                          string `json:"Plant"`
-	TaxCode                        string `json:"TaxCode"`
-	DocumentCurrency               string `json:"DocumentCurrency"`
-	SupplierInvoiceItemAmount      string `json:"SupplierInvoiceItemAmount"`
-	PurchaseOrderQuantityUnit      string `json:"PurchaseOrderQuantityUnit"`
-	QuantityInPurchaseOrderUnit    string `json:"QuantityInPurchaseOrderUnit"`
-	PurchaseOrderPriceUnit         string `json:"PurchaseOrderPriceUnit"`
-	QtyInPurchaseOrderPriceUnit    string `json:"QtyInPurchaseOrderPriceUnit"`
-	SupplierInvoiceItemText        string `json:"SupplierInvoiceItemText"`
-	PurchasingDocumentItemCategory string `json:"PurchasingDocumentItemCategory"`
 }
 
 type Account struct {
@@ -92,4 +74,22 @@ type Account struct {
 	InternalOrder                 string `json:"InternalOrder"`
 	ProjectNetwork                string `json:"ProjectNetwork"`
 	ProfitabilitySegment          string `json:"ProfitabilitySegment"`
+}
+
+type PurchaseOrder           struct {
+	SupplierInvoice                string `json:"SupplierInvoice"`
+	FiscalYear                     string `json:"FiscalYear"`
+	SupplierInvoiceItem            string `json:"SupplierInvoiceItem"`
+	PurchaseOrder                  string `json:"PurchaseOrder"`
+	PurchaseOrderItem              string `json:"PurchaseOrderItem"`
+	Plant                          string `json:"Plant"`
+	TaxCode                        string `json:"TaxCode"`
+	DocumentCurrency               string `json:"DocumentCurrency"`
+	SupplierInvoiceItemAmount      string `json:"SupplierInvoiceItemAmount"`
+	PurchaseOrderQuantityUnit      string `json:"PurchaseOrderQuantityUnit"`
+	QuantityInPurchaseOrderUnit    string `json:"QuantityInPurchaseOrderUnit"`
+	PurchaseOrderPriceUnit         string `json:"PurchaseOrderPriceUnit"`
+	QtyInPurchaseOrderPriceUnit    string `json:"QtyInPurchaseOrderPriceUnit"`
+	SupplierInvoiceItemText        string `json:"SupplierInvoiceItemText"`
+	PurchasingDocumentItemCategory string `json:"PurchasingDocumentItemCategory"`
 }

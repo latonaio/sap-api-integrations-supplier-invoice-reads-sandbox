@@ -1,6 +1,6 @@
 package responses
 
-type PurchaseOrderReference struct {
+type PurchaseOrder struct {
 	D struct {
 		Results []struct {
 			Metadata struct {

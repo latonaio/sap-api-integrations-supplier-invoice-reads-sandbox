@@ -32,7 +32,7 @@ type Header struct {
 			SupplierPostingLineItemText   string `json:"SupplierPostingLineItemText"`
 			TaxIsCalculatedAutomatically  bool   `json:"TaxIsCalculatedAutomatically"`
 			BusinessArea                  string `json:"BusinessArea"`
-			SupplierInvoiceIsCreditMemo   bool   `json:"SupplierInvoiceIsCreditMemo"`
+			SupplierInvoiceIsCreditMemo   string `json:"SupplierInvoiceIsCreditMemo"`
 			ReverseDocument               string `json:"ReverseDocument"`
 			ReverseDocumentFiscalYear     string `json:"ReverseDocumentFiscalYear"`
 		} `json:"results"`
