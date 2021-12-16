@@ -4,8 +4,8 @@
 	"redis_key": "abcdefg",
 	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
 	"SupplierInvoice": {
-		"SupplierInvoice": "",
-		"FiscalYear": "",
+		"SupplierInvoice": "5100000031",
+		"FiscalYear": "2016",
 		"CompanyCode": "",
 		"DocumentDate": "",
 		"PostingDate": "",
@@ -26,7 +26,7 @@
 		"PaymentMethod": "",
 		"InvoiceReference": "",
 		"SupplierPostingLineItemText": "",
-		"TaxIsCalculatedAutomatically": null,
+		"TaxIsCalculatedAutomatically": true,
 		"BusinessArea": "",
 		"SupplierInvoiceIsCreditMemo": "",
 		"ReverseDocument": "",
@@ -39,8 +39,8 @@
 		},
 		"PurchaseOrder": {
 			"SupplierInvoiceItem": "",
-			"PurchaseOrder": "4500000033",
-			"PurchaseOrderItem": "10",
+			"PurchaseOrder": "",
+			"PurchaseOrderItem": "",
 			"Plant": "",
 			"TaxCode": "",
 			"DocumentCurrency": "",
@@ -78,6 +78,7 @@
 		}
 	},
 	"api_schema": "sap.s4.beh.supplierinvoice.v1.SupplierInvoice.Created.v1",
-	"supplier_invoice": "",
-	"deleted": null
+	"accepter": ["All"],
+	"supplier_invoice": "5100000031",
+	"deleted": false
 }

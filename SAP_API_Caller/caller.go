@@ -26,26 +26,37 @@ func NewSAPAPICaller(baseUrl string, l *logger.Logger) *SAPAPICaller {
 	}
 }
 
-func (c *SAPAPICaller) AsyncGetSupplierInvoice(supplierInvoice, fiscalYear, purchaseOrder, purchaseOrderItem string) {
+func (c *SAPAPICaller) AsyncGetSupplierInvoice(supplierInvoice, fiscalYear, purchaseOrder, purchaseOrderItem string, accepter []string) {
 	wg := &sync.WaitGroup{}
+	wg.Add(len(accepter))
+	for _, fn := range accepter {
+		switch fn {
+		case "Header":
+			func() {
+				c.Header(supplierInvoice, fiscalYear)
+				wg.Done()
+			}()
+		case "Tax":
+			func() {
+				c.Tax(supplierInvoice, fiscalYear)
+				wg.Done()
+			}()
+		case "Account":
+			func() {
+				c.Account(supplierInvoice, fiscalYear)
+				wg.Done()
+			}()
+		case "PurchaseOrder":
+			func() {
+				c.PurchaseOrder(purchaseOrder, purchaseOrderItem)
+				wg.Done()
+			}()
 
-	wg.Add(4)
-	func() {
-		c.Header(supplierInvoice, fiscalYear)
-		wg.Done()
-	}()
-	func() {
-		c.Tax(supplierInvoice, fiscalYear)
-		wg.Done()
-	}()
-	func() {
-		c.Account(supplierInvoice, fiscalYear)
-		wg.Done()
-	}()
-	func() {
-		c.PurchaseOrder(purchaseOrder, purchaseOrderItem)
-		wg.Done()
-	}()
+		default:
+			wg.Done()
+		}
+	}
+
 	wg.Wait()
 }
 

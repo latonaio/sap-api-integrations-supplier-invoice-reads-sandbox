@@ -132,6 +132,7 @@ type SDC struct {
 		} `json:"AccountAssignment"`
 	} `json:"SupplierInvoice"`
 	APISchema          string `json:"api_schema"`
+	Accepter         []string `json:"accepter"`
 	SupplierInvoiceNo  string `json:"supplier_invoice"`
 	Deleted            bool   `json:"deleted"`
 }
