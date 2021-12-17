@@ -104,4 +104,17 @@ func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, mrpArea, valuationA
 	wg.Wait()
 }
 ```
+## Output  
+本マイクロサービスでは、[golang-logging-library](https://github.com/latonaio/golang-logging-library) により、以下のようなデータがJSON形式で出力されます。  
+以下の sample.json の例は、SAP 仕入先請求書 の ヘッダ が取得された結果の JSON の例です。  
+以下の項目のうち、"SupplierInvoice" ～ "ReverseDocumentFiscalYear" は、/SAP_API_Output_Formatter/type.go 内 の Type Product {} による出力結果です。"cursor" ～ "time"は、golang-logging-library による 定型フォーマットの出力結果です。  
 
+```
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-supplier-invoice-reads/SAP_API_Caller/caller.go#L58",
+	"function": "sap-api-integrations-supplier-invoice-reads/SAP_API_Caller.(*SAPAPICaller).Header",
+	"level": "INFO",
+	"message": "&{SupplierInvoice:5100000031 FiscalYear:2016 CompanyCode:1710 DocumentDate:/Date(1473811200000)/ PostingDate:/Date(1473811200000)/ SupplierInvoiceIDByInvcgParty: InvoicingParty:17300001 DocumentCurrency:USD InvoiceGrossAmount:35.00 DocumentHeaderText: PaymentTerms: DueCalculationBaseDate:/Date(1475193600000)/ NetPaymentDays:0 PaymentBlockingReason: AccountingDocumentType:RE BPBankAccountInternalID: SupplierInvoiceStatus:5 DirectQuotedExchangeRate:1.00000 SupplyingCountry: PaymentMethod: InvoiceReference: SupplierPostingLineItemText: TaxIsCalculatedAutomatically:true BusinessArea: SupplierInvoiceIsCreditMemo: ReverseDocument: ReverseDocumentFiscalYear:0000}",
+	"time": "2021-12-08T12:57:07.916655+09:00"
+}
+```
