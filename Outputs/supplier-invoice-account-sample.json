@@ -1,7 +1,0 @@
-{
-	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-supplier-invoice-reads/SAP_API_Caller/caller.go#L118",
-	"function": "sap-api-integrations-supplier-invoice-reads/SAP_API_Caller.(*SAPAPICaller).Account",
-	"level": "INFO",
-	"message": "&{SupplierInvoice:5100000031 FiscalYear:2016 SupplierInvoiceItem:1 CompanyCode:1710 CostCenter: ControllingArea:A000 BusinessArea: ProfitCenter:YB110 FunctionalArea:YB20 GLAccount:51100000 SalesOrder: SalesOrderItem:0 CostObject: WBSElement: DocumentCurrency:USD SuplrInvcAcctAssignmentAmount:35.00 TaxCode:I0 WorkItem: MasterFixedAsset: FixedAsset: DebitCreditCode:S InternalOrder:1000021 ProjectNetwork: ProfitabilitySegment:0}",
-	"time": "2021-12-08T12:57:08.65483+09:00"
-}

@@ -1,0 +1,23 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-supplier-invoice-reads/SAP_API_Caller/caller.go#L159",
+	"function": "sap-api-integrations-supplier-invoice-reads/SAP_API_Caller.(*SAPAPICaller).PurchaseOrder",
+	"level": "INFO",
+	"message": {
+		"SupplierInvoice": "5100000001",
+		"FiscalYear": "2016",
+		"SupplierInvoiceItem": "2",
+		"PurchaseOrder": "4500000012",
+		"PurchaseOrderItem": "30",
+		"Plant": "1710",
+		"TaxCode": "I1",
+		"DocumentCurrency": "USD",
+		"SupplierInvoiceItemAmount": "440.00",
+		"PurchaseOrderQuantityUnit": "PC",
+		"QuantityInPurchaseOrderUnit": "20",
+		"PurchaseOrderPriceUnit": "PC",
+		"QtyInPurchaseOrderPriceUnit": "20",
+		"SupplierInvoiceItemText": "",
+		"PurchasingDocumentItemCategory": "0"
+	},
+	"time": "2022-01-28T12:06:24+09:00"
+}

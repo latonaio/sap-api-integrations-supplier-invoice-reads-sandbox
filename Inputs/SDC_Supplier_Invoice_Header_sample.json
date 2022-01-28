@@ -78,7 +78,7 @@
 		}
 	},
 	"api_schema": "sap.s4.beh.supplierinvoice.v1.SupplierInvoice.Created.v1",
-	"accepter": ["All"],
+	"accepter": ["Header"],
 	"supplier_invoice": "5100000001",
 	"deleted": false
 }
