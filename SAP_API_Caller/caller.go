@@ -69,7 +69,7 @@ func (c *SAPAPICaller) Header(supplierInvoice, fiscalYear string) {
 	c.log.Info(data)
 }
 
-func (c *SAPAPICaller) callSupplierInvoiceSrvAPIRequirementHeader(api, supplierInvoice, fiscalYear string) (*sap_api_output_formatter.Header, error) {
+func (c *SAPAPICaller) callSupplierInvoiceSrvAPIRequirementHeader(api, supplierInvoice, fiscalYear string) ([]sap_api_output_formatter.Header, error) {
 	url := strings.Join([]string{c.baseURL, "API_SUPPLIERINVOICE_PROCESS_SRV", api}, "/")
 	req, _ := http.NewRequest("GET", url, nil)
 
@@ -99,7 +99,7 @@ func (c *SAPAPICaller) Tax(supplierInvoice, fiscalYear string) {
 	c.log.Info(data)
 }
 
-func (c *SAPAPICaller) callSupplierInvoiceSrvAPIRequirementTax(api, supplierInvoice, fiscalYear string) (*sap_api_output_formatter.Tax, error) {
+func (c *SAPAPICaller) callSupplierInvoiceSrvAPIRequirementTax(api, supplierInvoice, fiscalYear string) ([]sap_api_output_formatter.Tax, error) {
 	url := strings.Join([]string{c.baseURL, "API_SUPPLIERINVOICE_PROCESS_SRV", api}, "/")
 	req, _ := http.NewRequest("GET", url, nil)
 
@@ -129,7 +129,7 @@ func (c *SAPAPICaller) Account(supplierInvoice, fiscalYear string) {
 	c.log.Info(data)
 }
 
-func (c *SAPAPICaller) callSupplierInvoiceSrvAPIRequirementAccount(api, supplierInvoice, fiscalYear string) (*sap_api_output_formatter.Account, error) {
+func (c *SAPAPICaller) callSupplierInvoiceSrvAPIRequirementAccount(api, supplierInvoice, fiscalYear string) ([]sap_api_output_formatter.Account, error) {
 	url := strings.Join([]string{c.baseURL, "API_SUPPLIERINVOICE_PROCESS_SRV", api}, "/")
 	req, _ := http.NewRequest("GET", url, nil)
 
@@ -159,7 +159,7 @@ func (c *SAPAPICaller) PurchaseOrder(purchaseOrder, purchaseOrderItem string) {
 	c.log.Info(data)
 }
 
-func (c *SAPAPICaller) callSupplierInvoiceSrvAPIRequirementPurchaseOrder(api, purchaseOrder, purchaseOrderItem string) (*sap_api_output_formatter.PurchaseOrder, error) {
+func (c *SAPAPICaller) callSupplierInvoiceSrvAPIRequirementPurchaseOrder(api, purchaseOrder, purchaseOrderItem string) ([]sap_api_output_formatter.PurchaseOrder, error) {
 	url := strings.Join([]string{c.baseURL, "API_SUPPLIERINVOICE_PROCESS_SRV", api}, "/")
 	req, _ := http.NewRequest("GET", url, nil)
 

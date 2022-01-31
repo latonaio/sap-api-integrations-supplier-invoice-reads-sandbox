@@ -8,7 +8,7 @@ import (
 	"golang.org/x/xerrors"
 )
 
-func ConvertToHeader(raw []byte, l *logger.Logger) (*Header, error) {
+func ConvertToHeader(raw []byte, l *logger.Logger) ([]Header, error) {
 	pm := &responses.Header{}
 
 	err := json.Unmarshal(raw, pm)
@@ -18,12 +18,14 @@ func ConvertToHeader(raw []byte, l *logger.Logger) (*Header, error) {
 	if len(pm.D.Results) == 0 {
 		return nil, xerrors.New("Result data is not exist")
 	}
-	if len(pm.D.Results) > 1 {
-		l.Info("raw data has too many Results. %d Results exist. expected only 1 Result. Use the first of Results array", len(pm.D.Results))
+	if len(pm.D.Results) > 10 {
+		l.Info("raw data has too many Results. %d Results exist. show the first 10 of Results array", len(pm.D.Results))
 	}
-	data := pm.D.Results[0]
 
-	return &Header{
+	header := make([]Header, 0, 10)
+	for i := 0; i < 10 && i < len(pm.D.Results); i++ {
+		data := pm.D.Results[i]
+		header = append(header, Header{
 			SupplierInvoice:               data.SupplierInvoice,
 			FiscalYear:                    data.FiscalYear,
 			CompanyCode:                   data.CompanyCode,
@@ -51,10 +53,13 @@ func ConvertToHeader(raw []byte, l *logger.Logger) (*Header, error) {
 			SupplierInvoiceIsCreditMemo:   data.SupplierInvoiceIsCreditMemo,
 			ReverseDocument:               data.ReverseDocument,
 			ReverseDocumentFiscalYear:     data.ReverseDocumentFiscalYear,
-	}, nil
+		})
+	}
+
+	return header, nil
 }
 
-func ConvertToTax(raw []byte, l *logger.Logger) (*Tax, error) {
+func ConvertToTax(raw []byte, l *logger.Logger) ([]Tax, error) {
 	pm := &responses.Tax{}
 
 	err := json.Unmarshal(raw, pm)
@@ -64,22 +69,27 @@ func ConvertToTax(raw []byte, l *logger.Logger) (*Tax, error) {
 	if len(pm.D.Results) == 0 {
 		return nil, xerrors.New("Result data is not exist")
 	}
-	if len(pm.D.Results) > 1 {
-		l.Info("raw data has too many Results. %d Results exist. expected only 1 Result. Use the first of Results array", len(pm.D.Results))
+	if len(pm.D.Results) > 10 {
+		l.Info("raw data has too many Results. %d Results exist. show the first 10 of Results array", len(pm.D.Results))
 	}
-	data := pm.D.Results[0]
 
-	return &Tax{
+	tax := make([]Tax, 0, 10)
+	for i := 0; i < 10 && i < len(pm.D.Results); i++ {
+		data := pm.D.Results[i]
+		tax = append(tax, Tax{
 			SupplierInvoice:          data.SupplierInvoice,
 			FiscalYear:               data.FiscalYear,
 			TaxCode:                  data.TaxCode,
 			DocumentCurrency:         data.DocumentCurrency,
 			TaxAmount:                data.TaxAmount,
 			TaxBaseAmountInTransCrcy: data.TaxBaseAmountInTransCrcy,
-	}, nil
+		})
+	}
+
+	return tax, nil
 }
 
-func ConvertToAccount(raw []byte, l *logger.Logger) (*Account, error) {
+func ConvertToAccount(raw []byte, l *logger.Logger) ([]Account, error) {
 	pm := &responses.Account{}
 
 	err := json.Unmarshal(raw, pm)
@@ -89,12 +99,14 @@ func ConvertToAccount(raw []byte, l *logger.Logger) (*Account, error) {
 	if len(pm.D.Results) == 0 {
 		return nil, xerrors.New("Result data is not exist")
 	}
-	if len(pm.D.Results) > 1 {
-		l.Info("raw data has too many Results. %d Results exist. expected only 1 Result. Use the first of Results array", len(pm.D.Results))
+	if len(pm.D.Results) > 10 {
+		l.Info("raw data has too many Results. %d Results exist. show the first 10 of Results array", len(pm.D.Results))
 	}
-	data := pm.D.Results[0]
 
-	return &Account{
+	account := make([]Account, 0, 10)
+	for i := 0; i < 10 && i < len(pm.D.Results); i++ {
+		data := pm.D.Results[i]
+		account = append(account, Account{
 			SupplierInvoice:               data.SupplierInvoice,
 			FiscalYear:                    data.FiscalYear,
 			SupplierInvoiceItem:           data.SupplierInvoiceItem,
@@ -119,10 +131,13 @@ func ConvertToAccount(raw []byte, l *logger.Logger) (*Account, error) {
 			InternalOrder:                 data.InternalOrder,
 			ProjectNetwork:                data.ProjectNetwork,
 			ProfitabilitySegment:          data.ProfitabilitySegment,
-	}, nil
+		})
+	}
+
+	return account, nil
 }
 
-func ConvertToPurchaseOrder(raw []byte, l *logger.Logger) (*PurchaseOrder, error) {
+func ConvertToPurchaseOrder(raw []byte, l *logger.Logger) ([]PurchaseOrder, error) {
 	pm := &responses.PurchaseOrder{}
 
 	err := json.Unmarshal(raw, pm)
@@ -132,12 +147,14 @@ func ConvertToPurchaseOrder(raw []byte, l *logger.Logger) (*PurchaseOrder, error
 	if len(pm.D.Results) == 0 {
 		return nil, xerrors.New("Result data is not exist")
 	}
-	if len(pm.D.Results) > 1 {
-		l.Info("raw data has too many Results. %d Results exist. expected only 1 Result. Use the first of Results array", len(pm.D.Results))
+	if len(pm.D.Results) > 10 {
+		l.Info("raw data has too many Results. %d Results exist. show the first 10 of Results array", len(pm.D.Results))
 	}
-	data := pm.D.Results[0]
 
-	return &PurchaseOrder{
+	purchaseOrder := make([]PurchaseOrder, 0, 10)
+	for i := 0; i < 10 && i < len(pm.D.Results); i++ {
+		data := pm.D.Results[i]
+		purchaseOrder = append(purchaseOrder, PurchaseOrder{
 			SupplierInvoice:                data.SupplierInvoice,
 			FiscalYear:                     data.FiscalYear,
 			SupplierInvoiceItem:            data.SupplierInvoiceItem,
@@ -153,5 +170,8 @@ func ConvertToPurchaseOrder(raw []byte, l *logger.Logger) (*PurchaseOrder, error
 			QtyInPurchaseOrderPriceUnit:    data.QtyInPurchaseOrderPriceUnit,
 			SupplierInvoiceItemText:        data.SupplierInvoiceItemText,
 			PurchasingDocumentItemCategory: data.PurchasingDocumentItemCategory,
-	}, nil
+		})
+	}
+
+	return purchaseOrder, nil
 }

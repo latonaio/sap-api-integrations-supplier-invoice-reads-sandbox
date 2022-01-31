@@ -1,14 +1,27 @@
 {
-	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-supplier-invoice-reads/SAP_API_Caller/caller.go#L99",
-	"function": "sap-api-integrations-supplier-invoice-reads/SAP_API_Caller.(*SAPAPICaller).Tax",
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-purchasing-source-list-reads/SAP_API_Caller/caller.go#L64",
+	"function": "sap-api-integrations-purchasing-source-list-reads/SAP_API_Caller.(*SAPAPICaller).List",
 	"level": "INFO",
-	"message": {
-		"SupplierInvoice": "5100000001",
-		"FiscalYear": "2016",
-		"TaxCode": "I1",
-		"DocumentCurrency": "USD",
-		"TaxAmount": "121.63",
-		"TaxBaseAmountInTransCrcy": "440.00"
-	},
-	"time": "2022-01-28T12:07:37+09:00"
+	"message": [
+		{
+			"Material": "RM128",
+			"Plant": "1710",
+			"SourceListRecord": "1",
+			"ValidityStartDate": "2016-07-01T09:00:00+09:00",
+			"ValidityEndDate": "2020-06-21T09:00:00+09:00",
+			"Supplier": "17300001",
+			"PurchasingOrganization": "1710",
+			"SupplyingPlant": "",
+			"OrderQuantityUnit": "PC",
+			"PurchaseOutlineAgreement": "5600001710",
+			"SupplierIsFixed": false,
+			"SourceOfSupplyIsBlocked": false,
+			"MRPSourcingControl": "2",
+			"LastChangeDateTime": "",
+			"IssgPlantIsFixed": false,
+			"PurOutlineAgreementIsFixed": true,
+			"SourceOfSupplyIsFixed": true
+		}
+	],
+	"time": "2022-01-29T15:42:33+09:00"
 }
